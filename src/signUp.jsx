@@ -55,7 +55,7 @@ function Register(){
     }
     return(
         <>
-        <div style={{fontSize: "1.5rem", color: "red", position: "fixed", textAlign: "center", bottom: "35%", left: "44%"}}>{errorDisplay}</div>
+        <div style={{fontSize: "1.5rem", color: "red", position: "fixed", textAlign: "center", bottom: "35%", left: "43.5%"}}>{errorDisplay}</div>
         <div className="wrapper">
         <div className="signUpContainer">
         <div className="mainConta1ner">
