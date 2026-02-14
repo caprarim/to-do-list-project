@@ -1,0 +1,940 @@
+#listItem:hover::before{
+    content: "Click to Delete Task: ";
+}
+
+
+
+body{
+    background-image: url("src/assets/black.jpg");
+    overflow: hidden;
+    margin: 0px;
+}
+
+
+
+
+
+.toDoHome{
+    display: flex;
+    justify-content: start;;
+
+
+}
+
+.toDoHome:hover{
+    cursor: pointer
+}
+
+.paraList{
+   color: hsl(0, 77%, 56%);
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    right: 25px;
+    top: 8px;
+}
+
+.logo{
+    height: 100px;
+
+
+}
+
+
+
+#myh1{
+    text-align: center;
+}
+
+.detailsContainer{
+    display: flex;
+    justify-content: start;
+    align-items:start;
+    height: 80vh;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.picContainer{
+    display: flex;
+    justify-content: flex-end;
+    height: 100vh;
+}
+#mypic{
+    box-shadow: 5px 5px 3px hsl(0, 0%, 74%);
+    border: none;
+    position: fixed;
+    bottom: 10%;
+    height: 50%;
+    width: auto;
+    border-radius: 50px;
+}
+
+.myh12{
+    font-size: 2.8rem;
+    font-family: verdana;
+    color: hsl(0, 0%, 91%);
+
+}
+
+
+
+.startBtn2Container{
+    display: flex;
+    justify-content: start;
+}
+.startBtn{
+    height: 60px;
+    width: 200px;
+    border: none;
+    border-radius: 15px;
+    background-color:hsl(0, 100%, 52%);
+    color: hsl(0, 0%, 100%);
+    font-size: 1.2rem;
+    position: relative;
+    top: 400px;
+    left: 50px;
+    padding: 10px 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px;
+    transition: transform 0.1s ease
+}
+.startBtn:hover{
+    transform:translateY(-2px);
+    cursor:pointer
+}
+
+
+.perfectpara{
+    font-size: 1.8rem;
+    font-family: verdana;
+    color: hsl(0, 0%, 18%)
+}
+.offerpara{
+    font-size: 1.6rem;
+    font-family:serif;
+    color:hsl(181, 26%, 35%)
+}
+
+#myh1{
+    font-size: 2.8rem;
+    font-family: verdana;
+    color: red
+}   
+
+
+
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px;
+    
+}
+
+
+
+.container h1{
+    font-family: verdana;
+    gap: 100px;
+    margin: 0px;
+}
+
+.container input{
+    font-family: sans-serif;
+    text-align: center;
+    height: 25px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+.inboxParent{
+    display: flex;
+    justify-content: center;
+}
+
+#inbox{
+    font-weight: bold;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.addtaskcontainer{
+    display: flex;
+    justify-content: center;
+}
+
+#addTask{
+    border: none;
+    background-color: hsl(0, 100%, 52%);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.5s ease;
+    padding: 12px;
+    position: fixed;
+    bottom: 40%;
+    border-radius: 8px;
+}
+
+#addTask:hover{
+    background-color: hsl(0, 98%, 43%);
+    cursor: pointer;
+
+}
+
+
+.myTaskContainer{
+    display: flex;
+    justify-content: center;
+}
+#myTask{
+    
+    height: 150px;
+    position: fixed;
+    bottom: 45%;
+    width: 500px;;
+    border: 2px solid grey;
+    border-radius:8px
+    ;
+}
+
+#myTask::placeholder{
+   color: grey;
+   font-family: sans-serif;
+   font-weight: bold;
+   transform: translateY(-50px);
+}
+
+
+.addTaskContainer2{
+    display: flex;
+    justify-content: center;
+}
+
+#addTask2{
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(0, 100%, 52%);
+    padding: 12px;
+    color: white;
+    ;
+    position: fixed;
+    bottom: 40%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.5s ease;
+}
+#addTask2:hover{
+    cursor: pointer;
+    background-color: hsl(0, 98%, 43%);
+}
+
+.CancelBtncontainer{
+    display: flex;
+    justify-content: center;
+}
+
+#cancelTask{
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 61%);
+    padding: 12px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 35%;
+    transition: background-color 0.5s ease;
+    
+}
+
+#cancelTask:hover{
+    background-color: hsl(0, 0%, 49%);
+    cursor: pointer
+
+}
+
+
+
+
+
+#myTasks{
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    display: block;
+    margin: 5px;
+    margin-left: 150px;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.addTask3Container{
+    display: flex;
+    justify-content: center;
+
+}
+
+#addTask3{
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(0, 100%, 52%);
+    padding: 12px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 40%;
+    transition: background-color 0.5s ease;
+    
+}
+
+#addTask3:hover{
+    cursor: pointer;
+    background-color: hsl(0, 94%, 41%);
+}
+
+
+
+.moveBtnUp:hover{
+    cursor: pointer;
+}
+
+.delTask{
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(0, 100%, 52%);
+    margin: 8px;
+    padding: 5px;
+    height: 30px;
+    color: white;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    top: 300px;
+    right: -65px;
+    transition: background-color 0.5s ease;
+} 
+
+.delTask:hover{
+    cursor: pointer;
+    background-color: hsl(0, 94%, 41%);
+}
+
+.moveBtnUp{
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(189, 98%, 46%);
+    margin: 8px;
+    padding: 5px;
+    color: white;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.5s ease;
+}
+.moveBtnUp:hover{
+    background-color: hsl(189, 97%, 36%);
+    cursor: pointer
+}
+.moveBtnDown{
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(189, 98%, 46%);
+    padding: 5px;
+    color: white;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.5s ease;
+}
+
+.moveBtnDown:hover{
+    background-color: hsl(189, 97%, 36%);
+    cursor: pointer
+}
+
+.startBtnContainer{
+    display: flex;
+    justify-content: flex-end;
+
+    
+}
+
+.startBtn2{
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 15px;
+    background-color:hsl(0, 100%, 52%);
+    color: hsl(0, 0%, 100%);
+    font-size: 1.2rem;
+    position: relative;
+    bottom: 270px;
+    padding: 8px 8px;
+    text-align: center;
+    align-self: flex-end;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.myAccountContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.myAccount{ 
+    height: 50px;
+    width: 250px;
+    border: none;
+    border-radius: 10px; 
+    background-color: hsl(9, 100%, 52%);
+    color: hsl(0, 0%, 95%); 
+    font-size: 1.4rem; 
+    padding: 8px 8px; 
+    text-align: center; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-family:monospace; 
+    transition: background-color 0.3s ease; 
+    margin-right: 20px;
+ }
+.startBtn2:hover{
+    
+    cursor:pointer;
+    background-color:hsl(0, 92%, 37%);
+}
+
+.signUppContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#signUp{
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 15px;
+    background-color:hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 0%);
+    font-size: 1.2rem;
+    padding: 8px 8px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    right: 160px;
+    bottom: 207px;
+    font-family:monospace;  
+    transition: background-color 0.3s ease;
+}
+
+#signUp:hover{
+    background-color:hsl(0, 3%, 94%);
+    cursor: pointer;
+}
+
+/* SIGN UP PAGE'S CSS */
+
+
+.wrapper{
+   
+    margin-left: 0px;;
+    margin-left: 0px;;
+}
+.signUpContainer{
+    /* background-image: url("assets/gradient.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ; */
+}
+.toDoHome2{
+    position: fixed;
+    top: -15px;
+    left: -2px
+}
+.toDoHome2:hover{
+    cursor: pointer
+}
+
+.mainConta1ner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+}
+.signUpDisplayDiv{
+     height: 600px;
+    width: 350px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+
+
+
+.myLogin{
+font-family:sans-serif;
+position: relative;
+bottom: 70px;
+    
+
+}
+
+.paraList2{
+   color: hsl(0, 77%, 56%);
+    position: fixed;
+    top: 0px;
+    left: 72px;
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.logo2{
+    height: 100px;
+
+}
+.passAndEmailContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+    margin-left: 125px;
+     margin-right: 125px;
+}
+
+.Email{
+    height: 40px;
+    width: 337px;
+    margin: 15px;
+    border: none;
+    background-color: white;
+    outline: none;
+
+}
+
+.Password{
+    height: 40px;
+    width: 337px;
+    border: none;
+    outline: none;
+
+}
+.myWelcome{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    top: 250px;
+    left: 730px;
+}
+
+
+.signUpBtn{
+    height: 50px;
+    width: 300px;
+    border: none;
+    border-radius: 10px;
+    background-color: hsl(9, 100%, 52%);
+    color: hsl(0, 0%, 0%);
+    font-size: 1.2rem;
+    padding: 8px 8px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    font-family:monospace;
+    
+    top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.signUpBtn:hover{
+    background-color:    hsl(9, 90%, 45%);
+    cursor: pointer;
+}
+
+h6{
+    color: red;
+    font-size: 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    bottom: 250px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+
+.EmailDisplay{
+    color: rgb(58, 57, 57);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.15rem;
+    position: fixed;
+    right: 45px;
+    bottom: 895px;
+    
+}
+
+
+.PassDisplay{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.15rem;
+    color: hsl(191, 82%, 78%);
+    position: fixed;
+    right: 75px;
+    bottom: 865px;
+    
+}
+
+.signOut{
+    height: 40px;
+    width: 135px;
+    border: none;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 63%);
+    color: hsl(0, 0%, 95%);
+    font-size: 1.4rem;
+    padding: 8px 8px;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: fixed;
+    right: 65px;
+    margin: 0px;
+    bottom: 835px;
+    font-family:monospace;
+    
+    transition: background-color 0.3s ease;
+}
+
+.signOut:hover{
+    cursor: pointer;
+    background-color: hsl(0, 0%, 48%);
+}
+
+
+
+#checkedTasks:hover{
+    cursor: pointer;
+}
+
+#h5{
+    position: absolute;
+    top: 885px;
+    right: 1600px;
+    font-size: 0.9rem;
+    height: auto;
+    margin-right: 50px;
+    padding: 7px 7px;
+    border-radius: 7px;
+    text-align: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 250px;
+    background-color: hsl(0, 0%, 24%)
+}
+
+
+
+#mySearch{
+    font-size: 1.2rem;
+    position: fixed;
+    bottom: 75%;
+    left: 1%;
+    outline: none;
+    border: none;
+}
+
+#popUpDiv{
+    display: flex;
+    justify-content: center;
+    background-color: hsl(0, 0%, 100%);
+    position: fixed;
+    top: 45%;
+    left: 34.3%;
+    height: 300px;
+    width: 600px;
+    border-radius: 7px;
+   
+    box-shadow: 3px 3px 10px whitesmoke;
+    margin: 0px;
+;
+}
+
+#myDisplayInput{
+    text-align: center;
+    height: 30px;
+    width: 596px;
+    top: 50%;
+    margin: 0px;
+    text-align: center;
+    position: fixed;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    background-color: hsl(0, 0%, 100%);
+}
+
+#myDisplayInput::placeholder{
+    font-size: 1rem;
+    color: hsl(0, 0%, 61%);
+    ;
+}
+
+#myList{
+    position: fixed;
+    left: 915px;
+    top: 420px;
+    font-size: 1.2rem;
+}
+
+#myList:hover{
+    cursor: pointer;
+}
+
+input:hover::after{
+    content: "✔";
+    position: relative;
+    bottom: 2px;
+    left: 2px;
+    font-size: 10px;
+
+}
+input[type="radio"]{
+    transform: scale(1.5);
+    position: relative;
+    accent-color: rgb(247, 246, 246);
+}
+
+li{
+    user-select: none;
+
+}
+
+.greyed{
+    background-color: grey;
+}
+
+.abc{
+    margin: 0px;
+    background-color: hsl(0, 0%, 89%);
+    height: 100vh;
+    padding: 140px 140px;
+    width: 4vh;
+    bottom: 15px;
+    position: fixed;
+}
+
+.logoPicContainer{
+    display: flex;
+    justify-content: end;
+}
+#logoPic{
+    height: 100px;
+    position: fixed;
+    bottom: 92%;
+}
+
+.logoContainer{
+    display: flex;
+    justify-content: center;
+}
+
+#logoname{
+    color: hsl(0, 77%, 56%);
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    user-select: none;
+    position: fixed;
+    bottom: 93.8%;
+    
+}
+
+
+.coolAddTask .firstLetterOfDiv{
+   background-color: rgb(229, 12, 12);
+   font-size: 1.5rem;
+   color: rgb(255, 255, 255);
+   text-align: center;
+   height: 30px;
+   width: 30px;
+   border-radius: 50%;
+   justify-content: center;
+   align-items: center;
+   display: inline-flex;
+   transition: ease 0.3s background;
+}
+.coolAddTask{
+    position: fixed;
+    border: none;
+    background-color: hsl(0, 0%, 89%);
+    bottom: 82.8%;
+    color: hsl(0, 77%, 56%);
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    left: 0.9%;
+    cursor: pointer;
+}
+.coolAddTask .firstLetterOfDiv:hover{
+    background: hsl(0, 88%, 36%);
+
+}
+
+#logoname:hover{
+    cursor: pointer;
+    user-select: none;
+}
+
+#logoPic:hover{
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
+.threeDotsContainer{
+    display: flex;
+    justify-content: center;
+   
+}
+.threeDot{
+    width: 7px;
+    height: 7px;
+    background-color: grey;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.threeDot:hover{
+    cursor: pointer;
+}
+.optionsDisplay{
+    height: 350px;
+    width: 200px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 3px 3px 5px hsl(0, 0%, 79%);
+    position: fixed;
+    top: 200px;
+    left: 440px
+}
+
+.deleteMsg{
+    height: 150px;
+    width: 400px;
+    background-color: white;
+    box-shadow: 3px 3px 1000000px hsl(0, 0%, 79%);
+    border-radius: 10px;    
+    overflow: hidden;
+    font-family: sans-serif;
+    position: fixed;
+    right: 40%;
+    top: 25%;
+   padding: 12px 12px;
+
+
+}
+
+#deleteBtn2{
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(0, 100%, 52%);
+    margin: 8px;
+    padding: 5px;
+    height: 30px;
+    color: white;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    left: 335px;
+    /*  */
+}
+
+#cancelBtn2{
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 61%);
+    padding: 5px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    left: 269px;
+    margin: 8px;
+    bottom: 37.5px
+   
+}
+
+.popUpAddTaskContainer{
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.popUpAddTask{
+
+    background-color: hsl(0, 0%, 100%);
+    height: 300px;
+    width: 600px;
+    position: fixed;
+    border-radius: 7px;
+    box-shadow: 3px 3px 10px whitesmoke;
+    
+}
+
+.myAddTaskInput{
+    position: fixed;
+    height: 40px;
+    width: 597px;
+    top: 26%;
+    text-align: center;
+    border: none;
+    background-color:hsl(0, 0%, 100%);
+    outline: none;
+}
+
+.addTask4{
+    border: none;
+    background-color: hsl(192, 3%, 32%);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.5s ease;
+    padding: 12px;
+    position: fixed;
+    bottom: 62%;
+    right: 47.5%;
+    border-radius: 8px;
+}
+
+.addTask4:hover{
+    background-color:hsl(185, 89%, 32%);
+    cursor: pointer;
+
+}
+
+.displayErrors{
+    font-size: 5rem;
+    color: red;
+}
