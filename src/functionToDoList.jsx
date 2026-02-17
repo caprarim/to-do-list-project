@@ -7,7 +7,25 @@ function ToDoLi(){
 
     let [isDisabled, setisDisabled] = useState(true)
 
+    let [display2, setDisplay2] = useState(false)
+
+    let [isDisplay3, setIsDisplay3] = useState(false)
+
+    let [isDisplay2, setIsDisplay2] = useState(false)
+
+    let [display5, setDisplay5] = useState(false)
+
     let [isChecked, setisChecked] = useState(false)
+
+    let [isDisabled2, setisDisabled2] = useState(true)
+
+    let [isDisplay, setIsDisplay] = useState(false)
+
+    let [displayTrue, setDisplayTrue] = useState(false)
+
+    let [truE, setTruE] = useState(true)
+    let [showListDisplay, setDisplay] = useState(true)
+    let [myText, setmyText] = useState("")
 
     let [mainTasks, setMainTasks] = useState(
         JSON.parse(localStorage.getItem("myTasks")) || [])
@@ -96,6 +114,7 @@ function handleTaskInput(e){
     }
 
         function deleteTask(index){
+            setDisplay5(false)
             
 
             const myOptionsDisplay = document.getElementById("myOptionsDisplay")
@@ -150,6 +169,7 @@ function handleTaskInput(e){
             emailDisplay.style.display = "block"
             passDisplay.style.display = "block"
             signOutBtn.style.display = "block"
+            setIsDisplay(true)
 
         }
 
@@ -160,10 +180,13 @@ function handleTaskInput(e){
             emailDisplay.style.display = "none"
              passDisplay.style.display = "none"
              signOutBtn.style.display = "none"
+             setIsDisplay(false)
         }
         
         function logOut(){  
             navigate("/sign")
+            
+
         }
         const h5 = document.getElementById("h5")
 
@@ -194,7 +217,6 @@ function handleTaskInput(e){
     }
     let [para, setParaTxt] = useState("")
         function displayPopUp(){
-            
             const popUpDiv = document.getElementById("popUpDiv")
             const myDisplayInput = document.getElementById("myDisplayInput")
             const addTask3 = document.getElementById("addTask3")
@@ -215,6 +237,7 @@ function handleTaskInput(e){
             else{
                 setParaTxt("")
             }
+            setIsDisplay3(true)
             
 
         }
@@ -225,6 +248,7 @@ function handleTaskInput(e){
             const myDisplayInput = document.getElementById("myDisplayInput")
             popUpDiv.style.display = "none"
             myDisplayInput.style.display = "none"
+            setIsDisplay3(false)
 
         }
         function showTasks(){
@@ -241,15 +265,12 @@ function handleTaskInput(e){
         }
         
         function showOptions(){
-            const myOptionsDisplay = document.getElementById("myOptionsDisplay")
-            
-            myOptionsDisplay.style.display = "flex"
-            
-            
+            setDisplay5(true)
+            setIsDisplay2(true)
         }
+        
         function removeOptionsDisplay(){
-            const myOptionsDisplay = document.getElementById("myOptionsDisplay")
-            myOptionsDisplay.style.display = "none"
+        
 
         }
         function cancelClicked(){
@@ -275,6 +296,7 @@ function handleTaskInput(e){
             myDeleteMsg.style.display = "none"
             cancelBtn2.style.display = "none"
             deleteBtn2.style.display = "none"
+            setDisplay5(false)
         }
        let [popUpAddTaskTurnOn, setpopUpAddTaskTurnOn] = useState(false)
 
@@ -319,33 +341,78 @@ function handleTaskInput(e){
         setMainTasks(v => [...v, myTaskVal]) 
            setpopUpAddTaskTurnOn(false)
            setInputDisplay(false)
-        setBtnDisplay(false)
+            setBtnDisplay(false)
         const addTask = document.getElementById("addTask")
             const addTask2 = document.getElementById("addTask2")
             const addTask3 = document.getElementById("addTask3")
             addTask.style.display = "block"
+            setisDisabled2(false)
 
 
         }
 
         function removeDisplay(){
             setpopUpAddTaskTurnOn(false)
+            const addTask = document.getElementById("addTask")
+            addTask.style.display = "flex"
 
         }
 
-        function handleRadioChange(e){
+        
 
-        }
         const nav = useNavigate()
         function sendHomePage(){
-            
             nav("/sendHome")
 
         }
 
+        function handleChange(e){
+            if(e.target.value == 0){
+                setisDisabled2(true)
+            }
+            else{
+                setisDisabled2(false)
+            }
+            
+        }
+        let n3v = useNavigate()
+
+        function displayDelPopUp(){
+            setDisplayTrue(true)
+            setTruE(false)
+        }
+
+    
+        function deleteAcc(){
+            localStorage.removeItem("MYNAME")
+   
+            localStorage.removeItem("P")
+            
+            localStorage.removeItem("E")
+
+            localStorage.removeItem("myTasks")
+
+            localStorage.removeItem("newPassword")
+
+            setDisplay(false)
+
+
+            n3v("/sendHome")
+
+        }
+
+        function cancel2(){
+            setDisplayTrue(false)
+            setTruE(true)
+        }
+
+        function cancel4(){
+            setIsDisplay2(false)
+            setDisplay5(false)
+        }
+
     return( 
         <>
-        
         <div className="allFunctionContainer">
             <div className="abcContainer">
         <div className="abc">
@@ -369,42 +436,51 @@ function handleTaskInput(e){
          </div>
 
          <div id="popUpDiv"
-          onDoubleClick={removeDisplayOfPopUp} style={{display: "none"}}>
+         style={isDisplay3 ? {display: "block"} : {display: "none"}}>
             {displaysearchTasks.map((task) => 
         <li id="myList" onClick={reDirect} 
-         style={{listStyle: "none", display: "none", color: "red", position: "fixed", right: "100%"}}>{task}</li>)}
+         style={{listStyle: "none", color: "red", position: "fixed", right: "100%"}}>{task}</li>)}
 
          <input style={{display: "none"}}
           id="myDisplayInput" placeholder="Search Task"
-         value={searchTasks} onBlur={removeDisplayOfPopUp}
+         value={searchTasks}
           onChange={handleSearchTasks} onKeyDown={showTasks} 
          ></input>
+
          <p style={{position: "fixed"}}>{para}</p>
 
         </div>
-
+        
+            
         <h5 id="h5" style={{display: "none"}}></h5>
+        <div className="click2" style={{height: "1000px"}} onClick={removeDisplayOfPopUp}>
 
         <div className="myAccountContainer">
-        <button onClick={showEmailAndPass} onMouseDown={hideEmailAndPass}
-          className="myAccount">{localStorage.getItem("MYNAME")}</button>
+        <button onClick={showEmailAndPass}
+        className="myAccount">{localStorage.getItem("MYNAME")}</button>
           </div>
-
+          
+        <div className="click" onClick={hideEmailAndPass} style={{height: "5000px", width: "5000px"}}>
         <h2 id="3Mail" className="EmailDisplay"
          style={{display: "none"}}>
              {localStorage.getItem("E")}
              </h2>
 
         <h2 id="pass" className="PassDisplay"
-         style={{display: "none"}}>{localStorage.getItem("P")}</h2>
+         style={{display: "none"}}>{localStorage.getItem("P") == null ? localStorage.getItem("newPassword") : localStorage.getItem("P")}</h2>
 
+        <button className="deleteAccount" style={isDisplay ? {display: "block"} : {display: "none"}}
+        onClick={displayDelPopUp}>Delete Account</button>
         <div className="inboxParent">
         <h1 id="inbox"></h1>
         </div>
+        <div className="delPopUp" style={displayTrue ? {display: "block"} : {display: "none"}}><h1>Are you sure you would like to delete your account?</h1>
+        <button className="yesBtn" onClick={deleteAcc}>Yes</button> <button className="noBtn" onClick={cancel2}>Cancel</button>
+        </div>
+
 
         <div className="popUpAddTaskContainer">
-
-            <div className="popUpAddTask" onDoubleClick={removeDisplay}
+            <div className="popUpAddTask"
              style={popUpAddTaskTurnOn ? {display: "block"} : {display: "none"}}>
                 
                 <input className="myAddTaskInput" value={inputValue}
@@ -412,23 +488,25 @@ function handleTaskInput(e){
                   style={inputDisplay ? {display: "block"} : {display: "none"}}
                    id="myAddTaskInput" placeholder="+ Add task"></input>
 
-                <button className="addTask4" disabled={isDisabled}
-                 style={btnDisplay ? {display: "block"} : {display: "none"}} id="addTask4" onClick={addTask3}>Add Task</button>
+                <button className="addTask4"
+                 style={btnDisplay ? {display: "block"} : {display: "none"}} id="addTask4"
+                 onClick={addTask3}>Add Task</button>
                 
             </div>
         </div>
-
+        <div className="dontClickPopUp" onClick={removeDisplay} style={{height: "5000px", width: "5000px"}}>
         <button id="signOutBtn"className="signOut"
          onClick={logOut} style={{display: "none"}}>Log Out</button>
+
+
+         
 
         <div className="listItemsContainer">
         <ol>
         {mainTasks.map((t, index) => 
         <li draggable={true}
          onDragEnd={() => moveDown(index)} key={index} id="myTasks"
-          style={{listStyle: "none"}
-         && {position: "relative", left: "200px", top: "120px", color: "red", fontFamily: "monospace"}
-          }> {t}
+          style={showListDisplay ? {display: "block"} : {display: "none"}}> {t}
           
             <input type="radio"
              id="checkedTasks" value={isChecked} onClick={() =>
@@ -439,13 +517,19 @@ function handleTaskInput(e){
             <div className="threeDot" onClick={showOptions}></div>
             <div className="threeDot" onClick={showOptions}></div>
             </div>
+                
             <div className="optionsDisplay" id="myOptionsDisplay"
-         style={{display: "none"}} onDoubleClick={removeOptionsDisplay}>
+         style={display5 ? {display: "block"} : {display: "none"}}>
 
             <button className="delTask"
-             id="myDeleteTask" onClick={() => deleteTask(index)}>
+             id="myDeleteTask" onClick={() => deleteTask(index)}
+              style={isDisplay2 ? {display: "block"} : {display: "none"}}>
                 Delete</button>
+
+            <button className="cancel4" onClick={cancel4}>Cancel</button>
+            
          </div>
+
          
         
     
@@ -463,9 +547,10 @@ function handleTaskInput(e){
         </li>)}
         </ol>
         </div>
-        
+        </div>
         </div>
         
+       
       
         
         
@@ -473,12 +558,12 @@ function handleTaskInput(e){
 
         <div className="addTask3Container">
         <button id="addTask3" onClick={displayinput} style={{display: "none"}
-        }>+ Add Task</button>
+        }>+ Add Task</button>   
         </div>
         
         
         <div className="addtaskcontainer">
-        <button id="addTask" onClick={displayinput}>+ Add Task</button>
+        <button id="addTask" onClick={displayinput} style={truE ? {display: "block"} : {display: "none"}}>+ Add Task</button>
         </div>
 
         <div className="CancelBtncontainer">
@@ -494,11 +579,15 @@ function handleTaskInput(e){
         </div>
 
         <div className="addTaskContainer2">
-        <button id="addTask2" disabled={isDisabled} onClick={addTask} style={{display: "none"}}
+        <button id="addTask2" disabled={isDisabled} onClick={addTask} style={{display: "none"}} value={myText} onChange={handleChange}
         >+ Add Task</button>
         </div>
         
+        </div>
 
+        </div>
+
+       
 
         </>
     )

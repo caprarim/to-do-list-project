@@ -3,19 +3,25 @@
 
 
   function ToDoList(){
-    const navigate = useNavigate()
+    let [signOrLogIn, setSignOrLogIn] = useState(localStorage.getItem("E") !== null ? "Log in" : "Sign up")
 
+
+    let [signTrue, setSign] = useState(false)
+    
+    const navigate = useNavigate()
     useEffect(() => {
       document.title = `To Do List | Organize Your Tasks`
     })
+    
     function SendToHome(){
       navigate("/sign")
     }
     function Sign(){
       navigate("/sign")
+      
     }
     
-
+    
 
   return (
     <>
@@ -33,7 +39,7 @@
 
       <h1 id="myh1">To Do List</h1>
       <div className="signUppContainer">
-      <h1 id="signUp" onClick={Sign}>Sign Up</h1>
+      <h1 id="signUp" onClick={Sign}>{signOrLogIn}</h1>
       </div>
       <div className="startBtnContainer">
       <button className="startBtn2" onClick={SendToHome}>Start for free</button>
@@ -50,7 +56,7 @@
      </div>
      <div className="picContainer">
           <img
-            src="src/assets/todoListpicc.PNG"
+            src="src/assets/AITDL.png"
             id="mypic"
             alt="To Do Preview"
           />
