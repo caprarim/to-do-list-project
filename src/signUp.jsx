@@ -151,7 +151,7 @@ function Register(){
         <div className="toDoHome2">
         <img
           className="logo2"
-          src="src/assets/logo2.png"
+          src="/to-do-list-project/logo2.png"
           alt="Logo"
         />
         <p className="paraList2">todoli</p>

@@ -29,7 +29,7 @@
       <div className="toDoHome">
         <img
           className="logo"
-          src="src/assets/logo2.png"
+          src="/to-do-list-project/logo2.png"
           alt="Logo"
         />
         <p className="paraList">todoli</p>
@@ -56,7 +56,7 @@
      </div>
      <div className="picContainer">
           <img
-            src="src/assets/AITDL.png"
+            src="/to-do-list-project/AITDL.png"
             id="mypic"
             alt="To Do Preview"
           />

@@ -5,7 +5,7 @@
 
 
 body{
-    background-image: url("src/assets/black.jpg");
+    background-image: url("/to-do-list-project/black.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
@@ -201,10 +201,9 @@ body{
     justify-content: center;
 }
 #myTask{
-    
-    height: 150px;
     position: fixed;
     bottom: 45%;
+    height: 150px;
     width: 500px;;
     border: 2px solid grey;
     border-radius:8px
@@ -358,12 +357,12 @@ body{
     cursor: pointer
 }
 .moveBtnDown{
+    position: relative;
     border: none;
     border-radius: 5px;
     background-color: hsl(189, 98%, 46%);
     padding: 5px;
     color: white;
-    position: relative;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1rem;
     transition: background-color 0.5s ease;
@@ -382,6 +381,8 @@ body{
 }
 
 .startBtn2{
+    position: relative;
+    bottom: 270px;
     height: 50px;
     width: 150px;
     border: none;
@@ -389,8 +390,6 @@ body{
     background-color:hsl(0, 100%, 52%);
     color: hsl(0, 0%, 100%);
     font-size: 1.2rem;
-    position: relative;
-    bottom: 270px;
     padding: 8px 8px;
     text-align: center;
     align-self: flex-end;
@@ -558,8 +557,6 @@ bottom: 70px;
 
 
 .signUpBtn{
-    height: 50px;
-    width: 300px;
     border: none;
     border-radius: 10px;
     background-color: hsl(9, 100%, 52%);
@@ -568,11 +565,12 @@ bottom: 70px;
     padding: 8px 8px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
     font-family:monospace;
-    
-    top: 15px;
     transition: background-color 0.3s ease;
+    position: relative;
+    top: 15px;
+        height: 50px;
+    width: 300px;
 }
 
 .signUpBtn:hover{
@@ -743,7 +741,7 @@ li{
 }
 
 .abc{
-    margin: 0px;
+    margin-bottom: -20px;;
     background-color: hsl(0, 0%, 89%);
     height: 100vh;
     padding: 140px 140px;

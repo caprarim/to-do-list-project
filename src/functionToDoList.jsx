@@ -24,7 +24,9 @@ function ToDoLi(){
     let [displayTrue, setDisplayTrue] = useState(false)
 
     let [truE, setTruE] = useState(true)
+
     let [showListDisplay, setDisplay] = useState(true)
+    
     let [myText, setmyText] = useState("")
 
     let [mainTasks, setMainTasks] = useState(
@@ -423,7 +425,7 @@ function handleTaskInput(e){
         
             <div className="logoContainer">
                 <div className="logoPicContainer">
-            <img src="src/assets/logo2.png" id="logoPic" onClick={sendHomePage}></img>
+            <img src="/to-do-list-project/logo2.png" id="logoPic" onClick={sendHomePage}></img>
             </div>
             <p id="logoname" onClick={sendHomePage}>todoli</p>
          </div>
@@ -554,7 +556,7 @@ function handleTaskInput(e){
       
         
         
-        <audio src="src/assets/audio/mainnoise.mp3" id="myaudio"></audio>
+        <audio src="/to-do-list-project/mainnoise.mp3" id="myaudio"></audio>
 
         <div className="addTask3Container">
         <button id="addTask3" onClick={displayinput} style={{display: "none"}
@@ -587,7 +589,7 @@ function handleTaskInput(e){
 
         </div>
 
-       
+        
 
         </>
     )
